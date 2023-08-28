@@ -43,17 +43,6 @@ func main() {
 		fmt.Scanln(&domain)
 	}
 
-	compiledRegex, err := regexp.Compile(`^[a-zA-Z0-9][a-zA-Z0-9-]{1,61}[a-zA-Z0-9]\.[a-zA-Z]{2,}$`)
-
-	if err != nil {
-		fmt.Println(err)
-	}
-
-	if !compiledRegex.MatchString(domain) {
-		fmt.Println("Invalid domain name")
-		os.Exit(1)
-	}
-
 	interpolatedString := fmt.Sprintf(
 		`
 		server {
